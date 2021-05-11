@@ -1,0 +1,183 @@
+\documentclass[
+    ngerman,
+    color=1b,
+    load_common,
+    % submission,
+    leqno,
+    % dark_mode,
+    boxarc,
+    % shell_escape=false,
+]{rubos-tuda-template}
+
+\usepackage{lastpage}
+
+% --Definitionen für das Dokument (alle Optional)--
+% \sheetnumber{1}
+\version{1.0 Snapshot}
+\semester{Sommersemester 2021}
+\topic{Analysis und Stochastik}
+%  \fachbereich{Mathematik}
+\author{Ruben Deisenroth\and Simon Hüner}
+% \contributor{Simon Hüner}
+\date{\today}
+
+% --Stilistische Anpassungen für AuPL--
+\ExplSyntaxOn
+% \renewcommand*{\printAuthor}[1]{
+%   #1
+% }
+\tl_gset:Nn \g_ptxcd_logofile_tl {Bild2.png}
+
+\ExplSyntaxOff
+\renewcommand*{\taskformat}{\taskname\tasksep\thetask{}} % Taskprefix
+\renewcommand*{\subtaskformat}{\thesubtask\enskip}
+\renewcommand{\printTopic}{\fatsf{Themen:}~\getTopic{}}
+% Titelbereich
+\termStyle{left-right-manual}
+\termLeft{printAuthor,printContributor,printTopic}
+\termRight{printSemester,printVersion}
+\term{\fatsf{Bearbeitungszeit:} 90 Minuten\\\printDate{}\hfill\printFachbereich{}}
+% Kopfzeile
+\ConfigureHeadline{
+	headline={aud}
+}
+
+% --Beginn Dokument--
+
+\begin{document}
+\title[Mathe Klausur]{Übungsklausur\\im Fach Mathematik}
+\maketitle{}
+\newcommand{\titledistance}{\\[1em]} % Distance for title text frame
+\newcommand{\unchecked}{\rlap{\(\square\)}} % Checkbox
+\begin{minipage}[t]{0.45 \textwidth}
+    Name: \dotfill
+    \titledistance
+    Vorname: \dotfill
+    \titledistance
+    Matrikelnummer: \dotfill
+    \titledistance
+    Unterschrift: \dotfill
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45 \textwidth}
+    Studiengang: \dotfill
+    \titledistance
+    Semester: \dotfill
+    \titledistance
+    Anzahl Abgegebener Zusatzblätter: \dotfill
+    \titledistance
+    Drittversuch? Bitte ggf. ankreuzen \hspace{0.5cm} \huge\unchecked\normalsize
+\end{minipage}
+% Punktetabelle
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \tikzstyle{gradetablenode}=[minimum size=1cm, draw]
+        \tikzstyle{lightgraygradetablenode}=[gradetablenode, fill=fgcolor!10!\thepagecolor]
+        \node[lightgraygradetablenode, text width=3cm, font=\sffamily, anchor=west] (n0-0) at (0, 1){Aufgabe};
+        \node[gradetablenode, text width=3cm, font=\sffamily, below right = -\pgflinewidth and 0cm of n0-0.south west] (n1-0){Punkte (max)};
+        \node[gradetablenode, text width=3cm, font=\sffamily, below right = -\pgflinewidth and 0cm of n1-0.south west] (n2-0){Punkte (erreicht)};
+        \xdef\lasttask{0}
+        \mapTasks{
+            \node[lightgraygradetablenode, font=\bfseries, right=-\pgflinewidth of n0-\the\numexpr\value{task}-1\relax.east] (n0-\the\value{task}) {\thetask{}};
+            \node[gradetablenode, right=-\pgflinewidth of n1-\the\numexpr\value{task}-1\relax.east] (n1-\the\value{task}) {\getPoints{\thetask}};
+            \node[gradetablenode, right=-\pgflinewidth of n2-\the\numexpr\value{task}-1\relax.east] (n2-\the\value{task}) {};
+            \xdef\lasttask{\numexpr\lasttask+1\relax}
+        }
+        % Probably + 1 in node names is too much, will check later
+        \node[lightgraygradetablenode, minimum width=1.1cm, right=-\pgflinewidth of n0-\the\lasttask.east] (n0-\the\numexpr\lasttask + 1\relax){$\boldsymbol{\Sigma}$};
+        \node[gradetablenode, minimum width=1.1cm, right=-\pgflinewidth of n1-\the\lasttask.east] (n1-\the\numexpr\lasttask + 1\relax){$\getPointsTotal{}$};
+        \node[gradetablenode, minimum width=1.1cm, right=-\pgflinewidth of n2-\the\lasttask.east] (n2-\the\numexpr\lasttask + 1\relax){};
+        % % Extra lines
+        \draw[transform canvas={xshift = -1mm}] (n0-0.north east) -- (n2-0.south east);
+        \draw[transform canvas={xshift = 1mm}] (n0-\the\numexpr\lasttask+1.north west) -- (n2-\the\numexpr\lasttask+1.south west);
+        \draw[thick] (n0-0.north west) rectangle (n2-\the\numexpr\lasttask+1.south east);
+    \end{tikzpicture}
+    % \caption*{Punkteübersicht}
+\end{figure}
+{\large \textbf{Hinweise:}}
+\begin{itemize}
+    \item Überprüfen Sie zunächst, ob Ihre Klausur die Seiten 1 bis \pageref*{LastPage} besitzt.
+    \item Füllen Sie zuerst das Deckblatt aus und halten Sie Studienausweis und Lichtbildausweis bereit.
+    \item Sie sollten die Lösungen möglichst direkt in die Klausur eintragen. Reicht der vorhandene Platz nicht aus, so können Sie zusätzliche Blätter verwenden, die Sie zuerst mit Nachname, Vorname und Matrikelnummer kennzeichnen.
+    \item Nicht mit Bleistift schreiben und keine roten oder grünen Stifte verwenden.
+    \item Erlaubte Hilfsmittel: \textbf{Taschenrechner}, \textbf{Formelsamlung}
+\end{itemize}
+{\large \textbf{Viel Erfolg!}}
+\clearpage
+
+
+
+%% --Beginn Hausübung--%%
+\section*{Analysis (Differenzialrechnung)}
+% Aufgabe 1
+\begin{task}[points=1]{Differenzen- und Diffenrenzialquotient anwenden}
+    
+\end{task}
+% Aufgabe 2
+\begin{task}[points=1]{Ganzrationale Funktionen ableiten (Potenz-, Faktor- und Summenregel)}
+    
+\end{task}
+% Aufgabe 3
+\begin{task}[points=1]{Zusammenhang zwischen Funktion und Ableitungsfunktion begründen}
+    
+\end{task}
+% Aufgabe 4
+\begin{task}[points=1]{Graph der Ableitungsfunktion einer gegebenen Funktion zeichnen}
+    
+\end{task}
+% Aufgabe 5
+\begin{task}[points=1]{Funktionsterme und Funktionsgraphen zuordnen}
+    
+\end{task}
+% Aufgabe 6
+\begin{task}[points=1]{Aufstellen von Tangenten und Normalen}
+    
+\end{task}
+% Aufgabe 7
+\begin{task}[points=1]{weitere Anwendungen der 1. Ableitung}
+    
+\end{task}
+% Aufgabe 8
+\begin{task}[points=1]{Monotonieverhalten + rel. Extremwerte}
+    
+\end{task}
+% Aufgabe 9
+\begin{task}[points=1]{Evtl. Krümmungsverhalten und Wendepunkte}
+    
+\end{task}
+% \section*{Stochastik}
+% % Aufgabe 10
+% \begin{task}[points=1]{relative und absolute Häufigkeiten berechnen}
+    
+% \end{task}
+% % Aufgabe 11
+% \begin{task}[points=1]{Häufigkeiten in eine Vierfeldertafel eintragen}
+    
+% \end{task}
+% % Aufgabe 12
+% \begin{task}[points=1]{Rechnen mit Wahrscheinlichkeiten}
+    
+% \end{task}
+% % Aufgabe 13
+% \begin{task}[points=1]{Baumdiagramm aufstellen}
+    
+% \end{task}
+% % Aufgabe 14
+% \begin{task}[points=1]{Pfadregeln anwenden}
+    
+% \end{task}
+% % Aufgabe 15
+% \begin{task}[points=1]{Auf stochastische Unabhängigkeit prüfen}
+    
+% \end{task}
+% % Aufgabe 16
+% \begin{task}[points=1]{bedingte Wahrscheinlichkeiten berechnen}
+    
+% \end{task}
+% % Aufgabe 17
+% \begin{task}[points=1]{Ergebnisse im Sachzusammenhang interpretieren}
+    
+% \end{task}
+\end{document}
