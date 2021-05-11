@@ -123,8 +123,67 @@
     
 \end{task}
 % Aufgabe 4
-\begin{task}[points=1]{Graph der Ableitungsfunktion einer gegebenen Funktion zeichnen}
-    
+\begin{task}[points=2]{Graph der Ableitungsfunktion einer gegebenen Funktion zeichnen}
+    Zeichnen sie in die gegbenen Koordinatensysteme jeweils den Graphen der Ableitungsfunktion $f'(x)$, welche zur dort bereits eingezeichneten Graphen der Funktion $f(x)$ gehöhrt. 
+    Achten Sie dabei inbesondere auf die charakteristischen Punkte und eine saubere Stiftführung. Den weißen Bereich am Rechtenseitenrand können sie für Notizen und Überlegungen nutzen.
+    \par
+    \begin{tikzpicture}
+        \begin{axis}[
+            xmin=-5.2,
+            ymin=-5.2,
+            xmax=5.4,
+            ymax=5.4,
+            width=10.6cm,
+            height=10.6cm,
+            scale only axis,
+            grid=both,
+            axis x line=middle,
+            axis y line=center,
+            minor tick num=1,
+            ticklabel style = {font=\footnotesize},
+            y axis line style ={-{Triangle[angle=45:0.4em]}},
+            xtick={-5,...,5},
+            ytick={-5,...,5},
+            x axis line style ={-{Triangle[angle=45:0.4em]}},
+            axis line style={thick},
+            tick style = {thick, black},
+            ylabel={$y$},
+            xlabel={$x$}
+        ]
+        \addplot[thick,samples=100, blue]{0.75*x^2-2.25*x-2};%
+        \node[font=\small, blue]at(3.9cm,9.7cm){$f(x)$};
+        \end{axis}
+        \node[font=\small, anchor=north east] at (0cm,10.6cm){a)};
+    \end{tikzpicture}
+    \par
+    \begin{tikzpicture}
+        \begin{axis}[
+            xmin=-5.2,
+            ymin=-5.2,
+            xmax=5.4,
+            ymax=5.4,
+            width=10.6cm,
+            height=10.6cm,
+            scale only axis,
+            grid=both,
+            axis x line=middle,
+            axis y line=center,
+            minor tick num=1,
+            ticklabel style = {font=\footnotesize},
+            y axis line style ={-{Triangle[angle=45:0.4em]}},
+            xtick={-5,...,5},
+            ytick={-5,...,5},
+            x axis line style ={-{Triangle[angle=45:0.4em]}},
+            axis line style={thick},
+            tick style = {thick, black},
+            ylabel={$y$},
+            xlabel={$x$}
+        ]
+        \addplot[thick,samples=100, green!50!black]{(0.05*x^4+(1/15)*x^3-0.6*x^2)-1};%
+        \node[font=\small, green!50!black]at(0.8cm,9.7cm){$f(x)$};
+        \end{axis}
+        \node[font=\small, anchor=north east] at (0cm,10.6cm){b)};
+    \end{tikzpicture}
 \end{task}
 % Aufgabe 5
 \begin{task}[points=1]{Funktionsterme und Funktionsgraphen zuordnen}
