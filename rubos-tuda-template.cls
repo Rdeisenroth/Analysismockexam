@@ -137,6 +137,7 @@
   % \RequirePackage[utf8]{inputenc} % Already loaded before cs quotes
   \RequirePackage{karnaughmap}
   \RequirePackage{latexsym}
+  \RequirePackage{lastpage}
   \RequirePackage{longtable}
   \RequirePackage{makecell}
   \RequirePackage[framemethod=tikz]{mdframed}
@@ -144,6 +145,7 @@
   \RequirePackage[longtable]{multirow}
   \RequirePackage{nccmath}
   \RequirePackage{placeins}
+  \RequirePackage{pgfplots}
   \RequirePackage{proof}
   \RequirePackage{ragged2e}
   \RequirePackage{stackengine}
