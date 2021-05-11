@@ -123,7 +123,7 @@
     
 \end{task}
 % Aufgabe 4
-\begin{task}[points=2]{Graph der Ableitungsfunktion einer gegebenen Funktion zeichnen}
+\begin{task}[points=3]{Graph der Ableitungsfunktion einer gegebenen Funktion zeichnen}
     Zeichnen sie in die gegbenen Koordinatensysteme jeweils den Graphen der Ableitungsfunktion $f'(x)$, welche zur dort bereits eingezeichneten Graphen der Funktion $f(x)$ gehöhrt. 
     Achten Sie dabei inbesondere auf die charakteristischen Punkte und eine saubere Stiftführung. Den weißen Bereich am Rechtenseitenrand können sie für Notizen und Überlegungen nutzen.
     \par
@@ -183,6 +183,42 @@
         \node[font=\small, green!50!black]at(0.8cm,9.7cm){$f(x)$};
         \end{axis}
         \node[font=\small, anchor=north east] at (0cm,10.6cm){b)};
+    \end{tikzpicture}
+    \par
+    \vspace{2ex}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xmin=-5.2,
+            ymin=-3.2,
+            xmax=5.4,
+            ymax=3.4,
+            width=10.6cm,
+            height=6.6cm,
+            scale only axis,
+            grid=both,
+            axis x line=middle,
+            axis y line=center,
+            minor tick num=1,
+            ticklabel style = {font=\footnotesize},
+            y axis line style ={-{Triangle[angle=45:0.4em]}},
+            xticklabels={
+                $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$, 0,
+                $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$
+            },
+            xtick={
+                -6.28318,-4.71238898,..., 6.28318
+            },
+            ytick={-5,...,5},
+            x axis line style ={-{Triangle[angle=45:0.4em]}},
+            axis line style={thick},
+            tick style = {thick, black},
+            ylabel={$y$},
+            xlabel={$x$}
+        ]
+        \addplot[thick,samples=50, orange!50!black]{-3*sin(deg(x))};%
+        \node[font=\small, orange!50!black]at(2.3cm,5.2cm){$f(x)$};
+        \end{axis}
+        \node[font=\small, anchor=north east] at (0cm,6.6cm){c)};
     \end{tikzpicture}
 \end{task}
 % Aufgabe 5
