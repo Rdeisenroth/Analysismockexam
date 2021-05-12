@@ -990,15 +990,17 @@
 % Aufgabe 6
 \begin{task}[points=5]{Aufstellen von Tangenten und Normalen}
     \def\coordinatesystemradius{4}
+    \begin{grayInfoBox}
+        Gegeben sei der Graph $f(x):=x^3+0,5$. 
+        \textbf{Berechnen} Sie die Tangente $t_f$ bei $x=1$. 
+        \textbf{Geben} Sie auch den Schnittpunkt $p$ der Tangente mit $f$ \textbf{an} und \textbf{zeichnen} Sie die Tangente in das Diagramm \textbf{ein}.
+        \textbf{Berechnen} Sie anschließend die Normale $n_f$ bei $x=1$ und \textbf{zeichnen} Sie diese ebenfalls in das Diagramm \textbf{ein}.
+    \end{grayInfoBox}
     \begin{minipage}[t]{.5\textwidth}
-        \mbox{}\vspace{-2em}\begin{grayInfoBox}
-            Gegeben sei der Graph $f(x):=x^3+0,5$. 
-            \textbf{Berechnen} Sie die Tangente $t_f$ bei $x=1$. 
-            \textbf{Geben} Sie auch den Schnittpunkt $p$ der Tangente mit $f$ \textbf{an} und \textbf{zeichnen} Sie die Tangente in das Diagramm \textbf{ein}.
-            \textbf{Berechnen} Sie anschließend die Normale $n_f$ bei $x=1$ und \textbf{zeichnen} Sie diese ebenfalls in das Diagramm \textbf{ein}.
-        \end{grayInfoBox}
-        \mbox{}\\[2em]
-        $p$~(\IfSolutionT{\rlap{\color{red}1}}\qquad,\IfSolutionT{\rlap{\color{red}1.5}}\qquad)\\[2em]
+        % \mbox{}\vspace{-2em}
+        \mbox{}\\[1em]
+        % $p$~(\IfSolutionT{\rlap{\color{red}1}}\qquad,\IfSolutionT{\rlap{\color{red}1.5}}\qquad)\\[2em]
+        $p=\left(\tikz[baseline=-.1cm]{\node[inner sep=0pt, minimum width=1cm, minimum height=.5cm, draw]{\IfSolutionT{\color{red}1}};}, \tikz[baseline=-.1cm]{\node[inner sep=0pt, minimum width=1cm, minimum height=.5cm, draw]{\IfSolutionT{\color{red}1,5}};}\right)$\\[2em]
         $t_f=$~
         \IfSolutionT{\rlap{\raisebox{3pt}{\color{red}~$3x-1,5$}}}
         \dotfill\\[2em]
@@ -1080,7 +1082,9 @@
 \end{task}
 % Aufgabe 9
 \begin{task}[points=1]{Evtl. Krümmungsverhalten und Wendepunkte}
-    
+    \begin{grayInfoBox}
+        Gegeben Sei die Funktion $f(x)=\frac{1}{3}x^3-2x^2+3x+2$
+    \end{grayInfoBox}
 \end{task}
 % \section*{Stochastik}
 % % Aufgabe 10
