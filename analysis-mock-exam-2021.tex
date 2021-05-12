@@ -122,7 +122,18 @@
 
 \end{task}
 % Aufgabe 2
-\begin{task}[points=1]{Ganzrationale Funktionen ableiten (Potenz-, Faktor- und Summenregel)}
+\begin{task}[points=9]{Ganzrationale Funktionen ableiten (Potenz-, Faktor- und Summenregel)}
+    \begin{grayInfoBox}
+        Bilden Sie für jede der in a) bis f) gegebene Funktion die zugehöhrige Ableitung.
+    \end{grayInfoBox}
+    \begin{align*}
+        \text{a) }& f(x)=3x^4-53\\[0.5ex]
+        \text{b) }& g(x)=0,2x^5-2,5x^4+3x^2-2,79x+23\\[0.5ex]
+        \text{c) }& h(t)=0,25x^4-0,5t^2+x^2-6t+5x-3\\
+        \text{d) }& i(x)=\frac{2x^6-8x^4}{x^3+2x^2}\\[0.5ex]
+        \text{e) }& w(u)=\frac{5x^6+ax^4-bx^2}{2ax^2*(3a-5b)}\\[0.5ex]
+        \text{f) }& v(l)=5l^{2,5}+l^2-2l^{-3,5}
+    \end{align*}
 
 \end{task}
 \clearpage
@@ -580,8 +591,10 @@
 \clearpage
 % Aufgabe 4
 \begin{task}[points=3]{Graph der Ableitungsfunktion einer gegebenen Funktion zeichnen}
-    Zeichnen sie in die gegbenen Koordinatensysteme jeweils den Graphen der Ableitungsfunktion $f'(x)$, welche zur dort bereits eingezeichneten Graphen der Funktion $f(x)$ gehöhrt. 
-    Achten Sie dabei inbesondere auf die charakteristischen Punkte und eine saubere Stiftführung. Den weißen Bereich am Rechtenseitenrand können sie für Notizen und Überlegungen nutzen.
+    \begin{grayInfoBox}
+        Zeichnen sie in die gegbenen Koordinatensysteme jeweils den Graphen der Ableitungsfunktion $f'(x)$, welche zur dort bereits eingezeichneten Graphen der Funktion $f(x)$ gehöhrt. 
+        Achten Sie dabei inbesondere auf die charakteristischen Punkte und eine saubere Stiftführung. Den weißen Bereich am Rechtenseitenrand können sie für Notizen und Überlegungen nutzen.
+    \end{grayInfoBox}
     \par
     \begin{tikzpicture}
         \begin{axis}[
@@ -671,7 +684,7 @@
             ylabel={$y$},
             xlabel={$x$}
         ]
-        \addplot[thick,samples=50, orange!50!black]{-3*sin(deg(x))};%
+        \addplot[thick,samples=100, orange!50!black]{-3*sin(deg(x))};%
         \node[font=\small, orange!50!black]at(2.3cm,5.2cm){$f(x)$};
         \end{axis}
         \node[font=\small, anchor=north east] at (0cm,6.6cm){c)};
