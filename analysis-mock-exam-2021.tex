@@ -186,6 +186,12 @@
         \IfSolutionT{
             \node[anchor= north west] at (0,0){%
                 \textcolor{red}{%
+                    \begingroup
+                    \lineskip0pt
+                    \baselineskip.5cm
+                    \normalbaselineskip=\baselineskip
+                    \topskip\baselineskip
+                    \setlength{\jot}{.5cm}
                     $\begin{aligned}
                             f'(x) & =12x^3                       \\
                             g'(x) & =x^4-10x^3+6x-2,79           \\
@@ -194,6 +200,7 @@
                             j'(u) & =(6a^2-5ab)^{-1}*(20u^3+2au) \\
                             k'(l) & =12,5l^{1,5}+2l+7l^{-4,5}
                         \end{aligned}$
+                    \endgroup
                 }
             };
         }
