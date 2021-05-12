@@ -1084,7 +1084,102 @@
 \end{task}
 % Aufgabe 8
 \begin{task}[points=1]{Monotonieverhalten + rel. Extremwerte}
-
+    \begin{subtask}[points=3]
+        \begin{grayInfoBox}
+            Beschreiben Sie das Monotonieverhalten der drei in den Graphen abgebildeten Funktionen.
+        \end{grayInfoBox}
+        \begin{figure}[H]
+            \begin{subfigure}[t]{.33\textwidth}
+                \centering
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        xlabel=$x$,
+                        ylabel={$y$},
+                        axis lines=middle,
+                        axis line style={-{Triangle}{Bar}, thick},
+                        xmin=-4.4,
+                        xmax=4.4,
+                        ymin=-4.4,
+                        ymax=4.4,
+                        x=0.6cm,
+                        y=0.6cm,
+                        grid=both,
+                        minor tick num=1,
+                        xtick={-4,...,4},
+                        ytick={-4,...,4},
+                        every tick/.style={color=fgcolor},
+                        major grid style = {line width=.8pt},
+                        ]
+                        \addplot[thick,samples=100, smooth, blue]{0.7*x-2};%
+                    \end{axis}
+                \end{tikzpicture}
+                \caption*{\\ \parbox{0.9\textwidth}{\dotfill}}
+            \end{subfigure}
+            \begin{subfigure}[t]{.33\textwidth}
+                \centering
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        xlabel=$x$,
+                        ylabel={$y$},
+                        axis lines=middle,
+                        axis line style={-{Triangle}{Bar}, thick},
+                        xmin=-4.4,
+                        xmax=4.4,
+                        ymin=-4.4,
+                        ymax=4.4,
+                        x=0.6cm,
+                        y=0.6cm,
+                        grid=both,
+                        minor tick num=1,
+                        xtick={-4,...,4},
+                        ytick={-4,...,4},
+                        every tick/.style={color=fgcolor},
+                        major grid style = {line width=.8pt},
+                        ]
+                        \addplot[thick,samples=100, smooth, orange]{-0.5*x+e^-x-2.2};%
+                    \end{axis}
+                \end{tikzpicture}
+                \caption*{\\ \parbox{0.9\textwidth}{\dotfill}}
+            \end{subfigure}
+            \begin{subfigure}[t]{.33\textwidth}
+                \centering
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        xlabel=$x$,
+                        ylabel={$y$},
+                        axis lines=middle,
+                        axis line style={-{Triangle}{Bar}, thick},
+                        xmin=-4.4,
+                        xmax=4.4,
+                        ymin=-4.4,
+                        ymax=4.4,
+                        x=0.6cm,
+                        y=0.6cm,
+                        grid=both,
+                        minor tick num=1,
+                        xtick={-4,...,4},
+                        ytick={-4,...,4},
+                        every tick/.style={color=fgcolor},
+                        major grid style = {line width=.8pt},
+                        ]
+                        \addplot[thick,samples=100, smooth, green]{0.1*x^3};%
+                    \end{axis}
+                \end{tikzpicture}
+                \caption*{\\ \parbox{0.9\textwidth}{\dotfill}}
+            \end{subfigure}
+        \end{figure}
+    \end{subtask}
+    \begin{subtask}[points=8]
+        \begin{grayInfoBox}
+            Ermitteln Sie für die Extremwerte der folgenden Funktionen. Legen Sie Ihren Rechenweg dabei \textbf{nachvollziehbar} dar.
+        \end{grayInfoBox}
+        \begin{cpenumerate}
+            \item $f(x)=8x^2-25$
+            \item $g(x)=x^4-2x^2+2$
+            \item $h(x)=x^3+3x^2-a$
+            \item $i(t)=a^5+b^4-t^2+6t-8$
+        \end{cpenumerate}
+    \end{subtask}
 \end{task}
 % Aufgabe 9
 \begin{task}[points=1]{Evtl. Krümmungsverhalten und Wendepunkte}
