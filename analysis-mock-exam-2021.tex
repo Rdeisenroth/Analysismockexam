@@ -124,34 +124,69 @@
         Beantworten Sie die Fragen a) bis c) in \textbf{vollständigen} Sätzen und zeigen Sie in den Aufgabenteilen d) und e) Ihren \textbf{gesamten} Rechenweg.
     \end{grayInfoBox}
     \begin{cpenumerate}[label=\alph*), itemsep=1em]
-        \item Wie ist der Differenzenquotient definiert?
-                \IfSolutionT{\textcolor{red}{\\[0.2ex] Der Differenzenquotient ist die mittlere Steigung zwischen zwei Punkten $(x_1,y_1)$ und $(x_2,y_2)$ einer Funktion f(x). }}
-        \item Was unterscheidet den Diffenrenzialquotienten vom Differenzenquotienten?
-                \IfSolutionT{\textcolor{red}{\\[0.2ex] Der Diffenrenzialquotienten ist der Differenzenquotient eines Punktes $P_1=(x_1,y_1)$ auf einer Funktion f(x) dessen zweiter Punkt $(x_2,y_2)$ gegen diesen in­fi­ni­te­si­mal genau strebt. 
-                Daurch kann die Steigung in Punkt $P_1$ beschrieben werden.}}
-        \item Wann in welchen Fällen sind Differenzialquotient und Differenzenquotient identisch über die gesamte Funktion?
-                \IfSolutionT{\textcolor{red}{\\[0.2ex] Dieser Fall lieght vor wenn die Funktion $f(x)$ eine lineare Funktion ist und dadurch $f'(x)$ eine Konstante ist. 
-                Somit ist die Steigung in jedem Punkt identisch und die mittlere Steigung zwischen zwei Punkt entspricht dieser.}}
-        \item Differenzenquotient von: $f(x)=2x^3$ mit $x\in\mathbb{R} [0;2]$ 
-                \IfSolutionT{\textcolor{red}{\\[0.2ex] $\dfrac{\Delta y}{\Delta x} = \dfrac{f(x_2)-f(x_1)}{x_2-x_1} \\[0.2ex] \Rightarrow \dfrac{f(2)-f(0)}{2-0} =\dfrac{4-0}{2} = 2 $}}
+        \item Wie ist der Differenzenquotient definiert?\\[2ex]
+        \mbox{}
+        \IfSolutionT{\rlap{\raisebox{2pt}{\textcolor{red}{~Der Differenzenquotient ist die mittlere Steigung zwischen zwei Punkten $(x_1,y_1)$ und $(x_2,y_2)$ einer Funktion}}}}
+        \dotfill\\[2ex]
+        \mbox{}
+        \IfSolutionT{\rlap{\raisebox{2pt}{\textcolor{red}{~$f(x)$.}}}}
+        \dotfill{}
+        \item Was unterscheidet den Diffenrenzialquotienten vom Differenzenquotienten?\\[2ex]
+        \mbox{}
+        \IfSolutionT{\rlap{\raisebox{2pt}{\textcolor{red}{~Der Diffenrenzialquotienten ist der Differenzenquotient eines Punktes $P_1=(x_1,y_1)$ auf einer Funktion f(x)}}}}
+        \dotfill\\[2ex]
+        \mbox{}
+        \IfSolutionT{\rlap{\raisebox{2pt}{\textcolor{red}{~dessen zweiter Punkt $(x_2,y_2)$ gegen diesen in­fi­ni­te­si­mal genau strebt. Daurch kann die Steigung in Punkt $P_1$}}}}
+        \dotfill\\[2ex]
+        \mbox{}
+        \IfSolutionT{\rlap{\raisebox{2pt}{\textcolor{red}{~beschrieben werden.}}}}
+        \dotfill\\[2ex]
+        \mbox{}
+        \dotfill\\[2ex]
+        \mbox{}
+        \dotfill
+        \item Wann in welchen Fällen sind Differenzialquotient und Differenzenquotient identisch über die gesamte Funktion?\\[2em]
+        \mbox{}
+        \IfSolutionT{\rlap{\raisebox{2pt}{\textcolor{red}{Dieser Fall lieght vor wenn die Funktion $f(x)$ eine lineare Funktion ist und dadurch $f'(x)$ eine Konstante ist. So-}}}}
+        \dotfill\\[2ex]
+        \mbox{}
+        \IfSolutionT{\rlap{\raisebox{2pt}{\textcolor{red}{mit ist die Steigung in jedem Punkt identisch und die mittlere Steigung zwischen zwei Punkt entspricht dieser.}}}}
+        \dotfill\\[2ex]
+        \mbox{}
+        \dotfill\\[2ex]
+        \mbox{}
+        \dotfill
+        \item Differenzenquotient von: $f(x)=2x^3$ mit $x\in\mathbb{R} [0;2]$\par
+        \IfSolutionT{\vbox to 0pt{\hbox{\qquad\textcolor{red}{$\dfrac{\Delta y}{\Delta x} = \dfrac{f(x_2)-f(x_1)}{x_2-x_1} \\[0.2ex] \Rightarrow \dfrac{f(2)-f(0)}{2-0} =\dfrac{4-0}{2} = 2 $}}\vss}}
+        \mbox{}\vspace{4em}
         \item Differenzialquotient von: $g(x)=x^2$ mit $x\to1$ 
                 \IfSolutionT{\textcolor{red}{\\[0.2ex] $\dfrac{dx}{dy} = \lim_{x_2\to x_1} \dfrac{f(x_2)-f(x_1)}{x_2-x_1} = \lim_{h\to0} \dfrac{f(x_1+h)-f(x_1)}{h} 
                 \\[0.2ex]  \Rightarrow \lim_{h\to0} \dfrac{f(1+h)-f(1)}{h} = \dfrac{1+2h+h^2-1}{h} = \dfrac{2h+h^2}{h} = 2+h = 2$}}
     \end{cpenumerate}
 \end{task}
+\clearpage
 % Aufgabe 2
 \begin{task}[points=9]{Ganzrationale Funktionen ableiten (Potenz-, Faktor- und Summenregel)}
     \begin{grayInfoBox}
         Bilden Sie für jede der gegebene Funktion die zugehöhrige Ableitung.
     \end{grayInfoBox}
-    \begin{cpenumerate}[label=\alph*)\IfSolutionF{, itemsep=1em}]
-        \item $f(x)=3x^4-53$ \IfSolutionT{\textcolor{red}{\\[0.2ex] $f'(x)=12x^3$}}
-        \item $g(x)=0,2x^5-2,5x^4+3x^2-2,79x+23$ \IfSolutionT{\textcolor{red}{\\[0.2ex] $g'(x)=x^4-10x^3+6x-2,79$}}
-        \item $h(t)=0,25x^4-0,5t^2+x^2-6t+5x-3$ \IfSolutionT{\textcolor{red}{\\[0.2ex] $h'(t)=-t-6$}}
-        \item $i(x)=\dfrac{2x^6-8x^4}{x^3+2x^2}$ \IfSolutionT{\textcolor{red}{\\[0.2ex] $i'(x)=6x^2-8x$}}
-        \item $w(u)=\dfrac{5u^6+au^4-bu^2}{2au^2*(3a-5b)}$ \IfSolutionT{\textcolor{red}{\\[0.2ex] $w'(u)=(6a^2-5ab)^{-1}*(20u^3+2au)$}}
-        \item $v(l)=5l^{2,5}+l^2-2l^{-3,5}$ \IfSolutionT{\textcolor{red}{\\[0.2ex] $v'(l)=12,5l^{1,5}+2l+7l^{-4,5}$}}
+    \begin{cpenumerate}[label=\alph*), itemsep=1em]
+        \item $f(x)=3x^4-53$ 
+        \item $g(x)=0,2x^5-2,5x^4+3x^2-2,79x+23$
+        \item $h(t)=0,25x^4-0,5t^2+x^2-6t+5x-3$
+        \item $i(x)=\dfrac{2x^6-8x^4}{x^3+2x^2}$ 
+        \item $j(u)=\dfrac{5u^6+au^4-bu^2}{2au^2*(3a-5b)}$ 
+        \item $k(l)=5l^{2,5}+l^2-2l^{-3,5}$
     \end{cpenumerate}
+    \IfSolutionT{\textcolor{red}{
+    \begin{align*}
+        f'(x)&=12x^3\\
+        g'(x)&=x^4-10x^3+6x-2,79\\
+        h'(t)&=-t-6\\
+        i'(x)&=6x^2-8x\\
+        j'(u)&=(6a^2-5ab)^{-1}*(20u^3+2au)\\
+        k'(l)&=12,5l^{1,5}+2l+7l^{-4,5}
+    \end{align*}}}
 \end{task}
 \clearpage
 % Aufgabe 3
@@ -746,7 +781,7 @@
             \centering
             \begin{tikzpicture}
                 \def\coordinatesystemsize{\coordinatesystemradius}
-                % Odd System Size
+                Odd System Size
                 % \ifthenelse{\isodd{\coordinatesystemsize}}{}{
                 %     \def\coordinatesystemsize{\the\numexpr\coordinatesystemradius + 1\relax}
                 % }
