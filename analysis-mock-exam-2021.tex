@@ -1121,12 +1121,13 @@
 \end{task}
 \clearpage
 % Aufgabe 8
-\begin{task}[points=1]{Monotonieverhalten + rel. Extremwerte}
+\begin{task}[points=auto]{Monotonieverhalten + rel. Extremwerte}
     \begin{subtask}[points=3]
         \begin{grayInfoBox}
             Beschreiben Sie das Monotonieverhalten der drei in den Graphen abgebildeten Funktionen.
         \end{grayInfoBox}
         \begin{figure}[H]
+            \centering
             \begin{subfigure}[t]{.33\textwidth}
                 \centering
                 \begin{tikzpicture}
@@ -1151,7 +1152,7 @@
                         \addplot[thick,samples=100, smooth, blue]{0.7*x-2};%
                     \end{axis}
                 \end{tikzpicture}
-                \caption*{\\ \parbox{0.9\textwidth}{\dotfill}}
+                %\caption*{\\ \parbox{0.9\textwidth}{\dotfill}}
             \end{subfigure}
             \begin{subfigure}[t]{.33\textwidth}
                 \centering
@@ -1177,7 +1178,7 @@
                         \addplot[thick,samples=100, smooth, orange]{-0.5*x+e^-x-2.2};%
                     \end{axis}
                 \end{tikzpicture}
-                \caption*{\\ \parbox{0.9\textwidth}{\dotfill}}
+                %\caption*{\\ \parbox{0.9\textwidth}{\dotfill}}
             \end{subfigure}
             \begin{subfigure}[t]{.33\textwidth}
                 \centering
@@ -1203,15 +1204,23 @@
                         \addplot[thick,samples=100, smooth, green]{0.1*x^3};%
                     \end{axis}
                 \end{tikzpicture}
-                \caption*{\\ \parbox{0.9\textwidth}{\dotfill}}
+                %\caption*{\\ \parbox{0.9\textwidth}{\dotfill}}
             \end{subfigure}
+            \\[2ex]
+            \hspace*{0.0165\textwidth}
+            \IfSolutionT{\rlap{\raisebox{6pt}{\color{red}\hspace{4ex}streng monoton steigend}}}\parbox{0.297\textwidth}{\dotfill}
+            \hspace*{0.033\textwidth}
+            \IfSolutionT{\rlap{\raisebox{6pt}{\color{red}\hspace{4ex}streng monoton fallend}}}\parbox{0.297\textwidth}{\dotfill}
+            \hspace*{0.033\textwidth}
+            \IfSolutionT{\rlap{\raisebox{6pt}{\color{red}\hspace{4ex}monoton steigend}}}\parbox{0.297\textwidth}{\dotfill}
+            \hspace*{0.0165\textwidth}
         \end{figure}
     \end{subtask}
     \begin{subtask}[points=8]
         \begin{grayInfoBox}
             Ermitteln Sie für die Extremwerte der folgenden Funktionen. Legen Sie Ihren Rechenweg dabei \textbf{nachvollziehbar} dar.
         \end{grayInfoBox}
-        \begin{cpenumerate}
+        \begin{cpenumerate}[label=\alph*),itemsep=1em]
             \item $f(x)=8x^2-25$
             \item $g(x)=x^4-2x^2+2$
             \item $h(x)=x^3+3x^2-a$
@@ -1221,7 +1230,7 @@
 \end{task}
 \clearpage
 % Aufgabe 9
-\begin{task}[points=1]{Evtl. Krümmungsverhalten und Wendepunkte}
+\begin{task}[points=3]{Evtl. Krümmungsverhalten und Wendepunkte}
     \begin{grayInfoBox}
         Gegeben Sei die Funktion $f(x):=\frac{1}{3}x^3-2x^2+3x+1$. \textbf{Berechnen} Sie alle Wendepunkte von $G_f$. 
         Geben Sie den \textbf{vollständigen} Rechenweg an. Sie können zur Hilfe $G_f$ in das Koordinatensystem einzeichnen.
