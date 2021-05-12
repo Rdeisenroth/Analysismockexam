@@ -187,14 +187,14 @@
             \node[anchor= north west] at (0,0){%
                 \textcolor{red}{%
                     $\begin{aligned}
-                        f'(x) & =12x^3                       \\
-                        g'(x) & =x^4-10x^3+6x-2,79           \\
-                        h'(t) & =-t-6                        \\
-                        i'(x) & =6x^2-8x                     \\
-                        j'(u) & =(6a^2-5ab)^{-1}*(20u^3+2au) \\
-                        k'(l) & =12,5l^{1,5}+2l+7l^{-4,5}
-                    \end{aligned}$
-                    }
+                            f'(x) & =12x^3                       \\
+                            g'(x) & =x^4-10x^3+6x-2,79           \\
+                            h'(t) & =-t-6                        \\
+                            i'(x) & =6x^2-8x                     \\
+                            j'(u) & =(6a^2-5ab)^{-1}*(20u^3+2au) \\
+                            k'(l) & =12,5l^{1,5}+2l+7l^{-4,5}
+                        \end{aligned}$
+                }
             };
         }
     \end{tikzpicture}
@@ -1237,9 +1237,29 @@
             \item $h(x)=x^3+3x^2-a$
             \item $i(t)=a^5+b^4-t^2+6t-8$
         \end{cpenumerate}
+        \begin{tikzpicture}[x=1cm, y=1cm]
+            \draw[step=5mm, black!40!white] (0,0) grid (\textwidth,-7cm);
+            \draw[step=1cm, line width=.8pt, black!90!white] (0,0) grid (\textwidth,-7cm);
+            \IfSolutionT{
+                \node[anchor= north west] at (0,0){%
+                    \textcolor{red}{%
+                        $\begin{aligned}
+                                f'(x) & =16x                                                      \\
+                                      & \rightarrow x_1=0                                         \\[2.2ex]
+                                g'(x) & =4x^3-4x                                                  \\
+                                      & \rightarrow x_1=-1~;\hspace{1ex}x_2=0~;\hspace{1ex}x_3=-1 \\[2.2ex]
+                                h'(x) & =3x^2+6x                                                  \\
+                                      & \rightarrow x_1=-2~;\hspace{1ex}x_2=0                     \\[2.2ex]
+                                i'(t) & =2t+6                                                     \\
+                                      & \rightarrow x_1=-3
+                            \end{aligned}$
+                    }
+                };
+            }
+        \end{tikzpicture}
     \end{subtask}
 \end{task}
-\clearpage
+%\clearpage
 % Aufgabe 9
 \begin{task}[points=3]{Evtl. Krümmungsverhalten und Wendepunkte}
     \begin{grayInfoBox}
