@@ -183,7 +183,7 @@
         \draw[step=5mm, black!40!white] (0,0) grid (\textwidth,-15cm);
         % \draw[step=5cm, line width=0.5mm, black!50!white] (0,0) grid (\textwidth,-15cm);
         \draw[step=1cm, line width=.8pt, black!40!white] (0,0) grid (\textwidth,-15cm);
-        \IfSolutionT{
+        
             \node[anchor= north west] at (0,0){%
                 \textcolor{red}{%
                     \begingroup
@@ -192,18 +192,18 @@
                     \normalbaselineskip=\baselineskip
                     \topskip\baselineskip
                     \setlength{\jot}{.5cm}
-                    $\begin{aligned}
+                    $\begin{multlined}\textcolor{fgcolor}{\text{Platz für ihre Lösung:}}\IfSolutionT{\\[.5mm]\begin{aligned}
                             f'(x) & =12x^3                       \\
                             g'(x) & =x^4-10x^3+6x-2,79           \\
                             h'(t) & =-t-6                        \\
                             i'(x) & =6x^2-8x                     \\
                             j'(u) & =(6a^2-5ab)^{-1}*(20u^3+2au) \\
                             k'(l) & =12,5l^{1,5}+2l+7l^{-4,5}
-                        \end{aligned}$
+                        \end{aligned}}\end{multlined}$
                     \endgroup
                 }
             };
-        }
+        
     \end{tikzpicture}
 \end{task}
 \clearpage
@@ -1234,6 +1234,7 @@
             \hspace*{0.0165\textwidth}
         \end{figure}
     \end{subtask}
+    \vspace{-1cm}
     \begin{subtask}[points=8]
         \begin{grayInfoBox}
             Ermitteln Sie für die Extremwerte der folgenden Funktionen. Legen Sie Ihren Rechenweg dabei \textbf{nachvollziehbar} dar.
@@ -1266,7 +1267,7 @@
         \end{tikzpicture}
     \end{subtask}
 \end{task}
-%\clearpage
+\clearpage
 % Aufgabe 9
 \begin{task}[points=3]{Evtl. Krümmungsverhalten und Wendepunkte}
     \begin{grayInfoBox}
