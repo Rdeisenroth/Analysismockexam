@@ -21,7 +21,7 @@
 % \contributor{Simon Hüner}
 \date{\today}
 
-% --Stilistische Anpassungen für AuPL--
+% --Stilistische Anpassungen für die Klausur--
 \ExplSyntaxOn
 % \renewcommand*{\printAuthor}[1]{
 %   #1
@@ -56,21 +56,21 @@
 \newcommand{\titledistance}{\\[1em]} % Distance for title text frame
 \newcommand{\unchecked}{\rlap{\(\square\)}} % Checkbox
 \begin{minipage}[t]{0.45 \textwidth}
-    Name: \dotfill
+    Name: \IfSolutionT{\rlap{\raisebox{2pt}{\fatsf{~Musterlösung}}}}\dotfill
     \titledistance
-    Vorname: \dotfill
+    Vorname: \IfSolutionT{\rlap{\raisebox{2pt}{\fatsf{~-}}}}\dotfill
     \titledistance
-    Matrikelnummer: \dotfill
+    Matrikelnummer: \IfSolutionT{\rlap{\raisebox{2pt}{\fatsf{~0000000}}}}\dotfill
     \titledistance
-    Unterschrift: \dotfill
+    Unterschrift: \IfSolutionT{\rlap{\raisebox{2pt}{\fatsf{-}}}}\dotfill
 \end{minipage}
 \hfill\vline\hfill
 \begin{minipage}[t]{0.45 \textwidth}
-    Studiengang: \dotfill
+    Studiengang: \IfSolutionT{\rlap{\raisebox{2pt}{\fatsf{~-}}}}\dotfill
     \titledistance
-    Semester: \dotfill
+    Semester: \IfSolutionT{\rlap{\raisebox{2pt}{\fatsf{~-}}}}\dotfill
     \titledistance
-    Anzahl Abgegebener Zusatzblätter: \dotfill
+    Anzahl Abgegebener Zusatzblätter:\IfSolutionT{\rlap{\raisebox{2pt}{\fatsf{~0}}}} \dotfill
     \titledistance
     Drittversuch? Bitte ggf. ankreuzen \hspace{0.5cm} \huge\unchecked\normalsize
 \end{minipage}
@@ -88,13 +88,13 @@
         \mapTasks{
             \node[lightgraygradetablenode, font=\bfseries, right=-\pgflinewidth of n0-\the\numexpr\value{task}-1\relax.east] (n0-\the\value{task}) {\thetask{}};
             \node[gradetablenode, right=-\pgflinewidth of n1-\the\numexpr\value{task}-1\relax.east] (n1-\the\value{task}) {\getPoints{\thetask}};
-            \node[gradetablenode, right=-\pgflinewidth of n2-\the\numexpr\value{task}-1\relax.east] (n2-\the\value{task}) {};
+            \node[gradetablenode, right=-\pgflinewidth of n2-\the\numexpr\value{task}-1\relax.east] (n2-\the\value{task}) {\IfSolutionT{\fatsf{\getPoints{\thetask}}}};
             \xdef\lasttask{\numexpr\lasttask+1\relax}
         }
         % Probably + 1 in node names is too much, will check later
         \node[lightgraygradetablenode, minimum width=1.1cm, right=-\pgflinewidth of n0-\the\numexpr\lasttask\relax.east] (n0-\the\numexpr\lasttask + 1\relax){$\boldsymbol{\Sigma}$};
         \node[gradetablenode, minimum width=1.1cm, right=-\pgflinewidth of n1-\the\numexpr\lasttask\relax.east] (n1-\the\numexpr\lasttask + 1\relax){$\getPointsTotal{}$};
-        \node[gradetablenode, minimum width=1.1cm, right=-\pgflinewidth of n2-\the\numexpr\lasttask\relax.east] (n2-\the\numexpr\lasttask + 1\relax){};
+        \node[gradetablenode, minimum width=1.1cm, right=-\pgflinewidth of n2-\the\numexpr\lasttask\relax.east] (n2-\the\numexpr\lasttask + 1\relax){\IfSolutionT{\fatsf{\getPointsTotal{}}}};
         % % Extra lines
         \draw[transform canvas={xshift = -1mm}] (n0-0.north east) -- (n2-0.south east);
         \draw[transform canvas={xshift = 1mm}] (n0-\the\numexpr\lasttask+1.north west) -- (n2-\the\numexpr\lasttask+1.south west);
@@ -133,21 +133,30 @@
 % Aufgabe 2
 \begin{task}[points=9]{Ganzrationale Funktionen ableiten (Potenz-, Faktor- und Summenregel)}
     \begin{grayInfoBox}
-        Bilden Sie für jede der in a) bis f) gegebene Funktion die zugehöhrige Ableitung.
+        Bilden Sie für jede der gegebene Funktion die zugehöhrige Ableitung.
     \end{grayInfoBox}
     \begin{align*}
+<<<<<<< HEAD
         \text{a) }& f(x)=3x^4-53\\[0.5ex]
         \text{b) }& g(x)=0,2x^5-2,5x^4+3x^2-2,79x+23\\[0.5ex]
         \text{c) }& h(t)=0,25x^4-0,5t^2+x^2-6t+5x-3\\
         \text{d) }& i(x)=\frac{2x^6-8x^4}{x^3+2x^2}\\[0.5ex]
         \text{e) }& w(u)=\frac{5u^6+ax^4-bu^2}{2au^2*(3a-5b)}\\[0.5ex]
         \text{f) }& v(l)=5l^{2,5}+l^2-2l^{-3,5}
+=======
+        f(x) & =3x^4-53                              \\[0.5ex]
+        g(x) & =0,2x^5-2,5x^4+3x^2-2,79x+23          \\[0.5ex]
+        h(t) & =0,25x^4-0,5t^2+x^2-6t+5x-3           \\
+        i(x) & =\frac{2x^6-8x^4}{x^3+2x^2}           \\[0.5ex]
+        w(u) & =\frac{5x^6+ax^4-bx^2}{2ax^2*(3a-5b)} \\[0.5ex]
+        v(l) & =5l^{2,5}+l^2-2l^{-3,5}
+>>>>>>> 934b97afd23b3e8340401d636ffc10d1e0fc46a8
     \end{align*}
 
 \end{task}
 \clearpage
 % Aufgabe 3
-\begin{task}[points=1]{Zusammenhang zwischen Funktion und Ableitungsfunktion begründen}
+\begin{task}[points=6]{Zusammenhang zwischen Funktion und Ableitungsfunktion begründen}
     % Koordinatensystemgröße für Gesamte Aufgabe
     \def\coordinatesystemradius{4}
 
@@ -222,7 +231,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -233,10 +242,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=accentcolor,very thick]{x^2-2};
+                    \addplot[smooth, samples=100, draw=accentcolor,very thick]{x^2-2};
                 \end{axis}
             \end{tikzpicture}
             \caption*{$f(x)$}
@@ -253,7 +262,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -264,10 +273,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=red,very thick]{x^2};
+                    \addplot[smooth, samples=100, draw=red,very thick]{x^2};
                 \end{axis}
             \end{tikzpicture}
             \caption*{\untickedbox}
@@ -284,7 +293,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -295,10 +304,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=red,very thick]{2*x};
+                    \addplot[smooth, samples=100, draw=red,very thick]{2*x};
                 \end{axis}
             \end{tikzpicture}
             \caption*{\IfSolutionTF{\redtickedbox}{\untickedbox}}
@@ -315,7 +324,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -326,10 +335,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=red,very thick]{-2*x};
+                    \addplot[smooth, samples=100, draw=red,very thick]{-2*x};
                 \end{axis}
             \end{tikzpicture}
             \caption*{\untickedbox}
@@ -347,7 +356,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -358,10 +367,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=accentcolor,very thick]{(x-1)^3+2};
+                    \addplot[smooth, samples=100, draw=accentcolor,very thick]{(x-1)^3+2};
                 \end{axis}
             \end{tikzpicture}
             \caption*{$g(x)$}
@@ -378,7 +387,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -389,10 +398,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=red,very thick]{3*(x-1)^2};
+                    \addplot[smooth, samples=100, draw=red,very thick]{3*(x-1)^2};
                 \end{axis}
             \end{tikzpicture}
             \caption*{\IfSolutionTF{\redtickedbox}{\untickedbox}}
@@ -409,7 +418,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -420,10 +429,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=red,very thick]{2*(x-1)};
+                    \addplot[smooth, samples=100, draw=red,very thick]{2*(x-1)};
                 \end{axis}
             \end{tikzpicture}
             \caption*{\untickedbox}
@@ -440,7 +449,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -451,10 +460,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=red,very thick]{-3*(x-1)^2+2};
+                    \addplot[smooth, samples=100, draw=red,very thick]{-3*(x-1)^2+2};
                 \end{axis}
             \end{tikzpicture}
             \caption*{\untickedbox}
@@ -472,22 +481,22 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
                     ymax=\coordinatesystemsize,
                     x=.5cm,
                     y=.5cm,
-                    restrict y to domain=-100:100,
+                    % restrict y to domain=-100:100,
                     grid=both,
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=accentcolor,very thick]{.2 * (x)^2 * (x-2) * (x+2) - 2};
+                    \addplot[smooth, samples=100, samples=100, draw=accentcolor,very thick]{.2 * (x)^2 * (x-2) * (x+2) - 2};
                 \end{axis}
             \end{tikzpicture}
             \caption*{$h(x)$}
@@ -504,7 +513,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -515,10 +524,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=red,very thick]{x^3};
+                    \addplot[smooth, samples=100, draw=red,very thick]{x^3};
                 \end{axis}
             \end{tikzpicture}
             \caption*{\untickedbox}
@@ -535,7 +544,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -546,10 +555,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=red,very thick]{-(0.8 * x^3 - 1.6 * x)};
+                    \addplot[smooth, samples=100, draw=red,very thick]{-(0.8 * x^3 - 1.6 * x)};
                 \end{axis}
             \end{tikzpicture}
             \caption*{\untickedbox}
@@ -566,7 +575,7 @@
                     xlabel=$x$,
                     ylabel={$y$},
                     axis lines=middle,
-                    axis line style={-{Triangle}{Bar}, thick},
+                    axis line style={-{Triangle}, thick},
                     xmin=-\coordinatesystemsize,
                     xmax=\coordinatesystemsize,
                     ymin=-\coordinatesystemsize,
@@ -577,10 +586,10 @@
                     minor tick num=1,
                     xtick distance={2},
                     ytick distance={2},
-                    every tick/.style={color=fgcolor},
+                    every tick/.style={color=fgcolor, thick},
                     major grid style = {line width=.8pt},
                     ]
-                    \addplot[smooth, draw=red,very thick]{0.8 * x^3 - 1.6 * x};
+                    \addplot[smooth, samples=100, draw=red,very thick]{0.8 * x^3 - 1.6 * x};
                 \end{axis}
             \end{tikzpicture}
             \caption*{\IfSolutionTF{\redtickedbox}{\untickedbox}}
@@ -599,114 +608,192 @@
 \end{task}
 \clearpage
 % Aufgabe 4
-\begin{task}[points=3]{Graph der Ableitungsfunktion einer gegebenen Funktion zeichnen}
+\begin{task}[points=6]{Graph der Ableitungsfunktion einer gegebenen Funktion zeichnen}
     \begin{grayInfoBox}
-        Zeichnen sie in die gegbenen Koordinatensysteme jeweils den Graphen der Ableitungsfunktion $f'(x)$, welche zur dort bereits eingezeichneten Graphen der Funktion $f(x)$ gehöhrt. 
-        Achten Sie dabei inbesondere auf die charakteristischen Punkte und eine saubere Stiftführung. Den weißen Bereich am Rechtenseitenrand können sie für Notizen und Überlegungen nutzen.
+        Zeichnen sie in die gegbenen Koordinatensysteme jeweils den Graphen der Ableitungsfunktion $f'(x)$, welche zur dort bereits eingezeichneten Graphen der Funktion $f(x)$ gehöhrt.
+        Achten Sie dabei inbesondere auf die charakteristischen Punkte und eine saubere Stiftführung. Den weißen Bereich am rechten Seitenrand können sie für Notizen und Überlegungen nutzen.
     \end{grayInfoBox}
     \par
-    \begin{tikzpicture}
-        \begin{axis}[
-            xmin=-5.2,
-            ymin=-5.2,
-            xmax=5.4,
-            ymax=5.4,
-            width=10.6cm,
-            height=10.6cm,
-            scale only axis,
-            grid=both,
-            axis x line=middle,
-            axis y line=center,
-            minor tick num=1,
-            ticklabel style = {font=\footnotesize},
-            y axis line style ={-{Triangle[angle=45:0.4em]}},
-            xtick={-5,...,5},
-            ytick={-5,...,5},
-            x axis line style ={-{Triangle[angle=45:0.4em]}},
-            axis line style={thick},
-            tick style = {thick, black},
-            ylabel={$y$},
-            xlabel={$x$}
-        ]
-        \addplot[thick,samples=100, blue]{0.75*x^2-2.25*x-2};%
-        \node[font=\small, blue]at(3.9cm,9.7cm){$f(x)$};
-        \end{axis}
-        \node[font=\small, anchor=north east] at (0cm,10.6cm){a)};
-    \end{tikzpicture}
-    \par
-    \begin{tikzpicture}
-        \begin{axis}[
-            xmin=-5.2,
-            ymin=-5.2,
-            xmax=5.4,
-            ymax=5.4,
-            width=10.6cm,
-            height=10.6cm,
-            scale only axis,
-            grid=both,
-            axis x line=middle,
-            axis y line=center,
-            minor tick num=1,
-            ticklabel style = {font=\footnotesize},
-            y axis line style ={-{Triangle[angle=45:0.4em]}},
-            xtick={-5,...,5},
-            ytick={-5,...,5},
-            x axis line style ={-{Triangle[angle=45:0.4em]}},
-            axis line style={thick},
-            tick style = {thick, black},
-            ylabel={$y$},
-            xlabel={$x$}
-        ]
-        \addplot[thick,samples=100, green!50!black]{(0.05*x^4+(1/15)*x^3-0.6*x^2)-1};%
-        \node[font=\small, green!50!black]at(0.8cm,9.7cm){$f(x)$};
-        \end{axis}
-        \node[font=\small, anchor=north east] at (0cm,10.6cm){b)};
-    \end{tikzpicture}
-    \par
-    \vspace{2ex}
-    \begin{tikzpicture}
-        \begin{axis}[
-            xmin=-5.2,
-            ymin=-3.2,
-            xmax=5.4,
-            ymax=3.4,
-            width=10.6cm,
-            height=6.6cm,
-            scale only axis,
-            grid=both,
-            axis x line=middle,
-            axis y line=center,
-            minor tick num=1,
-            ticklabel style = {font=\footnotesize},
-            y axis line style ={-{Triangle[angle=45:0.4em]}},
-            xticklabels={
-                $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$, 0,
-                $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$
-            },
-            xtick={
-                -6.28318,-4.71238898,..., 6.28318
-            },
-            ytick={-5,...,5},
-            x axis line style ={-{Triangle[angle=45:0.4em]}},
-            axis line style={thick},
-            tick style = {thick, black},
-            ylabel={$y$},
-            xlabel={$x$}
-        ]
-        \addplot[thick,samples=100, orange!50!black]{-3*sin(deg(x))};%
-        \node[font=\small, orange!50!black]at(2.3cm,5.2cm){$f(x)$};
-        \end{axis}
-        \node[font=\small, anchor=north east] at (0cm,6.6cm){c)};
-    \end{tikzpicture}
+    \begin{subtask}[points=2]
+        \begin{tikzpicture}
+            \begin{axis}[
+                xmin=-5.2,
+                ymin=-5.2,
+                xmax=5.4,
+                ymax=5.4,
+                width=10.6cm,
+                height=10.6cm,
+                scale only axis,
+                grid=both,
+                axis x line=middle,
+                axis y line=center,
+                minor tick num=1,
+                ticklabel style = {font=\footnotesize},
+                y axis line style ={-{Triangle[angle=45:0.4em]}},
+                xtick={-5,...,5},
+                ytick={-5,...,5},
+                x axis line style ={-{Triangle[angle=45:0.4em]}},
+                axis line style={thick},
+                tick style = {thick, fgcolor},
+                major grid style = {line width=.8pt},
+                ylabel={$y$},
+                xlabel={$x$}
+                ]
+                \addplot[thick,samples=100, smooth, blue]{0.75*x^2-2.25*x-2};%
+                \IfSolutionT{
+                    \addplot[thick,samples=100, smooth, red]{1.5*x-2.25};
+                    \node[font=\small, red]at(axis cs:2,1.7){$f'(x)$};
+                }
+                \node[font=\small, blue]at(axis cs:-1.8,2.2){$f(x)$};
+            \end{axis}
+            % \node[font=\small, anchor=north east] at (0cm,10.6cm){a)};
+        \end{tikzpicture}
+    \end{subtask}
+    \begin{subtask}[points=2]
+        \begin{tikzpicture}
+            \begin{axis}[
+                xmin=-5.2,
+                ymin=-5.2,
+                xmax=5.4,
+                ymax=5.4,
+                width=10.6cm,
+                height=10.6cm,
+                scale only axis,
+                grid=both,
+                axis x line=middle,
+                axis y line=center,
+                minor tick num=1,
+                ticklabel style = {font=\footnotesize},
+                y axis line style ={-{Triangle[angle=45:0.4em]}},
+                xtick={-5,...,5},
+                ytick={-5,...,5},
+                x axis line style ={-{Triangle[angle=45:0.4em]}},
+                axis line style={thick},
+                tick style = {thick, fgcolor},
+                major grid style = {line width=.8pt},
+                ylabel={$y$},
+                xlabel={$x$}
+                ]
+                \addplot[thick,samples=100, smooth, green!50!black]{(0.05*x^4+(1/15)*x^3-0.6*x^2)-1};%
+                \IfSolutionT{
+                    \addplot[thick,samples=100, smooth, red]{(1/5)*x*(x^2+x-6)};%
+                    \node[font=\small, red]at(axis cs:2,1.7){$f'(x)$};
+                }
+                \node[font=\small, green!50!black]at(axis cs:3,-1.7){$f(x)$};
+            \end{axis}
+            \node[font=\small, anchor=north east] at (0cm,10.6cm){b)};
+        \end{tikzpicture}
+    \end{subtask}
+    \begin{subtask}[points=2]
+        \begin{tikzpicture}
+            \begin{axis}[
+                xmin=-5.2,
+                ymin=-3.2,
+                xmax=5.4,
+                ymax=3.4,
+                width=10.6cm,
+                height=6.6cm,
+                scale only axis,
+                grid=both,
+                axis x line=middle,
+                axis y line=center,
+                minor tick num=1,
+                ticklabel style = {font=\footnotesize},
+                y axis line style ={-{Triangle[angle=45:0.4em]}},
+                xticklabels={
+                        $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$, 0,
+                        $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$
+                    },
+                xtick={
+                        -6.28318,-4.71238898,..., 6.28318
+                    },
+                ytick={-5,...,5},
+                x axis line style ={-{Triangle[angle=45:0.4em]}},
+                axis line style={thick},
+                tick style = {thick, black},
+                major grid style = {line width=.8pt},
+                ylabel={$y$},
+                xlabel={$x$}
+                ]
+                \addplot[thick,samples=100, smooth, orange!50!black]{-3*sin(deg(x))};%
+                \IfSolutionT{
+                    \addplot[thick,samples=100, smooth, red]{-3*cos(deg(x))};%
+                    \node[font=\small, red]at(axis cs:1.8,2){$f'(x)$};
+                }
+                \node[font=\small, orange!50!black]at(axis cs:-3,2){$f(x)$};
+            \end{axis}
+            \node[font=\small, anchor=north east] at (0cm,6.6cm){c)};
+        \end{tikzpicture}
+    \end{subtask}
 \end{task}
+\clearpage
 % Aufgabe 5
 \begin{task}[points=3]{Funktionsterme und Funktionsgraphen zuordnen}
-    
-\end{task}
-% Aufgabe 6
-\begin{task}[points=1]{Aufstellen von Tangenten und Normalen}
 
 \end{task}
+\clearpage
+% Aufgabe 6
+\begin{task}[points=5]{Aufstellen von Tangenten und Normalen}
+    \def\coordinatesystemradius{4}
+    \begin{minipage}[t]{.5\textwidth}
+        Gegeben sei der Graph $f(x):=x^3+0,5$. \textbf{Berechnen} Sie die Tangente $t_f$ bei $x=1$. Geben Sie auch den Schnittpunkt $p$ der Tangente mit $f$ an und zeichnen Sie die Tangente in das Diagramm ein.\\[2em]
+        $p$~(\IfSolutionT{\rlap{\color{red}1}}\qquad,\IfSolutionT{\rlap{\color{red}1.5}}\qquad)\\[2em]
+        $t_f=$~
+        \IfSolutionT{\rlap{\raisebox{3pt}{\color{red}~$3x-1,5$}}}
+        \dotfill\\[2em]
+        $n_f=$~
+        \IfSolutionT{\rlap{\raisebox{6pt}{\color{red}~$-\frac{1}{3}x+\frac{11}{6}$}}}
+        \dotfill\\[1em]
+        Platz für Rechnungen:
+        \IfSolutionT{
+            \par\color{red}
+            \begin{align*}
+                f'(x) & = 3x^2                                                                                                   \\
+                f(1)  & = 3\cdot (1-1) + 1,5=1,5                                                                                 \\
+                f'(1) & = 3\cdot 1^3=3                                                                                           \\
+                t_f   & =f'(1)\cdot x + t=3\cdot x + (1,5-1\cdot 3)=\underline{\underline{3x-1.5}}                               \\
+                n_f   & =-\frac{1}{f'(1)}\cdot x + t = -\frac{1}{3} \cdot x + \left(1,5-+1\cdot \left(-\frac{1}{3}\right)\right) \\
+                      & =\underline{\underline{-\frac{1}{3}x+\frac{11}{6}}}
+            \end{align*}
+        }
+    \end{minipage}
+    \begin{minipage}[t]{.49\textwidth}
+        \mbox{}\vspace*{-1em}\\
+        \begin{tikzpicture}
+            \centering
+            \begin{axis}[
+                xlabel=$x$,
+                ylabel={$y$},
+                axis lines=middle,
+                axis line style={-{Triangle}{Bar}, thick},
+                xmin=-\the\dimexpr\coordinatesystemradius pt + .5pt\relax,
+                xmax=\the\dimexpr\coordinatesystemradius pt + .5pt\relax,
+                ymin=-\the\dimexpr\coordinatesystemradius pt + .5pt\relax,
+                ymax=\the\dimexpr\coordinatesystemradius pt + .5pt\relax,
+                x=1cm,
+                y=1cm,
+                grid=both,
+                minor tick num=1,
+                xtick={-\coordinatesystemradius,...,\coordinatesystemradius},
+                ytick={-\coordinatesystemradius,...,\coordinatesystemradius},
+                every tick/.style={color=fgcolor},
+                major grid style = {line width=.8pt},
+                ]
+                \addplot[smooth, samples=100, draw=accentcolor,very thick]{x^3+0.5};
+                \IfSolutionT{
+                \addplot[smooth, draw=red,very thick]{3 * (x-1)+1.5};
+                \addplot[smooth, draw=green,very thick]{-(1/3) * (x-1)+1.5};
+                \node [red] at (axis cs:.8,-.8){$t_f$};
+                \node [green] at (axis cs:1.8,.7){$n_f$};
+                \node [label={0:{(1,1.5)}},circle,fill,inner sep=2pt] at (axis cs:1,1.5){};
+                }
+            \end{axis}
+        \end{tikzpicture}
+        \captionof*{figure}{$f(x)=x^3+0,5$}
+    \end{minipage}
+
+\end{task}
+\clearpage
 % Aufgabe 7
 \begin{task}[points=1]{weitere Anwendungen der 1. Ableitung}
 

@@ -1033,7 +1033,7 @@
     #1 .choice:,
     #1 / aud .code:n = \tl_gset:cn {g_ptxcd_ex_headline_#1_tl} {
       \textbf{\g_ptxcd_shorttitle_tl}\tl_if_empty:NF \g_ptxcd_ex_semester_tl {\space{}im\space\textbf{\g_ptxcd_ex_semester_tl}}\tl_if_empty:NF \g_ptxcd_ex_dozent_tl {\space{}bei\space\textbf{\g_ptxcd_ex_dozent_tl}}\tl_if_empty:NF \g_ptxcd_ex_sheetnum_tl {\hfill Übungsblatt\space{}\padzeroes[2]{\g_ptxcd_ex_sheetnum_tl}}\par
-      \StudentName\StudentID},
+      \StudentNamename\StudentNamesep\IfSolutionT{\rlap{\textbf{\textsf{~Musterlösung}}}}\hrulefill\qquad\StudentIDname\StudentIDsep\prg_replicate:nn {7} {\numberFormBox{\IfSolutionT{\textbf{\textsf{0}}}}}},
     #1 / submittors-detailed .code:n = \tl_gset:cn {g_ptxcd_ex_headline_#1_tl} { % Diese Option ist eher für Einzelabgaben gedacht, da sie sonst sehr viel Platz weg nimmt
       \textbf{\g_ptxcd_shorttitle_tl}\tl_if_empty:NF \g_ptxcd_ex_semester_tl {\space{}im\space\textbf{\g_ptxcd_ex_semester_tl}}\tl_if_empty:NF \g_ptxcd_ex_dozent_tl {\space{}bei\space\textbf{\g_ptxcd_ex_dozent_tl}}\hfill Übungsblatt\space{}\padzeroes[2]{\g_ptxcd_ex_sheetnum_tl}\par
       \gdef\ptxcd_nextsep_submittors{}
