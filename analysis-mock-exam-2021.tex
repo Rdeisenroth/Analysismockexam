@@ -721,12 +721,12 @@
         Gegeben sind die folgenden Funktionen:\begin{align*}
             f(x)&=3\cdot(x-1)^2\\
             g(x)&=2\cdot(x-1)+0.25\\
-            h(x)&=-3\cdot(x-1)^2+2\\
-            i(x)&=(x+1)^3+2\\
-            j(x)&=(x+1)^3+2\\
-            k(x)&=(x+1)^3+2\\
-            l(x)&=(x+1)^3+2\\
-            m(x)&=(x+1)^3+2\\
+            h(x)&=2\cdot(x-1)\\
+            i(x)&=-3\cdot(x-1)^2+2\\
+            j(x)&=(x+2)^3+2\\
+            k(x)&=2\cdot\sin(x)\\
+            l(x)&=-0.2 (x)^2 \cdot (x-2) \cdot (x+2) + 1.4\\
+            m(x)&=.2 (x)^2 \cdot (x-2) \cdot (x+2) - 2\\
         \end{align*}
         Ihre Grafen werden mit $G_f$, $G_g$ usw. bezeichnet und sind im Folgenden Abgebildet. Schreiben Sie unter jedes Bild, welchen Graphen es darstellt. Es ist \textbf{keine} Begründung notwendig.
     \end{grayInfoBox}
@@ -763,7 +763,7 @@
                     \addplot[smooth, samples=100, draw=accentcolor,very thick]{(x+2)^3+2};
                 \end{axis}
             \end{tikzpicture}
-            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{};}}
+            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{\color{red}$G_j$}};}}
         \end{subfigure}
         \begin{subfigure}[t]{.25\textwidth}
             \centering
@@ -794,7 +794,7 @@
                     \addplot[smooth, samples=100, draw=teal,very thick]{.2 * (x)^2 * (x-2) * (x+2) - 2};
                 \end{axis}
             \end{tikzpicture}
-            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{};}}
+            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{\color{red}$G_m$}};}}
         \end{subfigure}
         \begin{subfigure}[t]{.25\textwidth}
             \centering
@@ -825,7 +825,7 @@
                     \addplot[smooth, samples=100, draw=magenta,very thick]{2*(x-1)+0.25};
                 \end{axis}
             \end{tikzpicture}
-            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{$G_g$}};}}
+            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{\color{red}$G_g$}};}}
         \end{subfigure}
         \begin{subfigure}[t]{.24\textwidth}
             \centering
@@ -856,7 +856,7 @@
                     \addplot[smooth, samples=100, draw=green!50!fgcolor,very thick]{2*sin(deg(x))};
                 \end{axis}
             \end{tikzpicture}
-            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{};}}
+            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{\color{red}$G_k$}};}}
         \end{subfigure}
         %g(x)
         \begin{subfigure}[t]{.24\textwidth}
@@ -888,7 +888,7 @@
                     \addplot[smooth, samples=100, draw=orange,very thick]{-.2 * (x)^2 * (x-2) * (x+2) + 1.4};
                 \end{axis}
             \end{tikzpicture}
-            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{};}}
+            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{\color{red}$G_l$}};}}
         \end{subfigure}
         \begin{subfigure}[t]{.25\textwidth}
             \centering
@@ -919,7 +919,7 @@
                     \addplot[smooth, samples=100, draw=brown,very thick]{3*(x-1)^2};
                 \end{axis}
             \end{tikzpicture}
-            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{$G_f$}};}}
+            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{\color{red}$G_f$}};}}
         \end{subfigure}
         \begin{subfigure}[t]{.25\textwidth}
             \centering
@@ -950,7 +950,7 @@
                     \addplot[smooth, samples=100, draw=olive,very thick]{2*(x-1)};
                 \end{axis}
             \end{tikzpicture}
-            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{};}}
+            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{\color{red}$G_h$}};}}
         \end{subfigure}
         \begin{subfigure}[t]{.24\textwidth}
             \centering
@@ -981,7 +981,7 @@
                     \addplot[smooth, samples=100, draw=red,very thick]{-3*(x-1)^2+2};
                 \end{axis}
             \end{tikzpicture}
-            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{$G_h$}};}}
+            \caption*{\tikz{\node[inner sep=0pt,draw, minimum width = 1.5cm, minimum height=.8cm]{\IfSolutionT{\color{red}$G_i$}};}}
         \end{subfigure}
     \end{figure}
     Platz für Überlegungen:
